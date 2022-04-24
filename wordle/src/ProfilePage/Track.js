@@ -42,7 +42,7 @@ function Track() {
             alert("You already finished the last game");
             alert("This is the new game");
             localStorage.setItem("keyboardHistory", "NONE");
-            Clear();
+            newGame();
             history("/home");
           } else {
             localStorage.setItem("initWordList", tempArray);
@@ -83,7 +83,7 @@ function Track() {
     };
     Tracking();
   };
-  const Clear = () => {
+  const newGame = () => {
     const namename = localStorage.getItem("email");
     let clearData = async () => {
       let formField = new FormData();
@@ -130,7 +130,7 @@ function Track() {
     localStorage.setItem("ee", ee);
     const delay = (ms) => new Promise((res) => setTimeout(res, ms));
     const waiting = async () => {
-      await delay(50);
+      await delay(30);
       history("/home");
     };
     waiting();
@@ -138,7 +138,7 @@ function Track() {
   return (
     <div className="app-style">
       <button onClick={trackData}>Resume Game</button>
-      <button onClick={Clear}>New Game</button>
+      <button onClick={newGame}>New Game</button>
     </div>
   );
 }

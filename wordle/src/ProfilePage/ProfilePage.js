@@ -9,6 +9,7 @@ import HamburgerBlur from "../Components/HamburgerMenu/HamburgerBlur";
 import SignOut from "../GoogleAuth/SignOut";
 import Options from "../WordOption/Options";
 import FileUpload from "./FileUpload";
+import ClearData from "./ClearData";
 import { useNavigate } from "react-router-dom";
 import paths from "../Utils/paths";
 import Track from "./Track";
@@ -47,6 +48,7 @@ function ProfilePage() {
       <br />
       <br />
       <FileUpload />
+      <ClearData/>
       <Options />
       <SignOut />
       <Track />

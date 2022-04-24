@@ -80,9 +80,7 @@ def  createUser(request):
             obj =User.objects.create(
             username = email
         )
-            obj2 = Data.objects.create(
-            username = email
-        )
+          
             obj3 = Key.objects.create(
             username = email
         )
@@ -125,20 +123,13 @@ def  getWord(request):
                 return Response(word_choice.upper())
                 break
         return Response("OK OK")
-    return Response("Tao Bi Loi lam roi")
+    return Response("ERROR")
 
 @api_view(['POST'])
 def  clear(request):
     if request.POST.get('action') == 'clear':
         email = request.POST.get('email')
         try:
-            obj = Data.objects.get(username = email)
-            obj.word1 = ""
-            obj.word2= ""
-            obj.word3= ""
-            obj.word4= ""
-            obj.word5= ""
-            obj.save()
             obj2 = UserHistory.objects.get(username = email)
             obj2.keyboard = ""
             obj2.save(update_fields=["keyboard"])     
@@ -190,4 +181,11 @@ def sendHistory(request):
         obj = UserHistory.objects.get(username = email)
         cc =  HistorySerializer(obj)
         return Response(cc.data)
-  
+
+@api_view(['POST'])
+def clearData(request):
+    if request.POST.get('action') == 'clearAllData':
+        email = request.POST.get('email')
+        obj= UserData.objects.filter(username = email)
+        obj.delete()
+        return Response("Delete data from user: " + email + " successfully")

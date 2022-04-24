@@ -11,5 +11,6 @@ urlpatterns = [
     path('user/sendkey/', views.sendKey, name = 'sendkey' ), 
     path('user/gethistory/', views.getHistory, name = 'gethistory' ), 
     path('user/sendhistory/', views.sendHistory, name = 'sendhistory' ), 
+    path('user/cleardata/', views.clearData, name = 'cleardata' ),
 
 ]
