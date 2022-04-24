@@ -27,18 +27,6 @@ class UserData(models.Model):
     def __str__(self):
       return self.content
 
-
-class Data(models.Model):
-    username = models.TextField(primary_key=True)
-    word1 = models.TextField()    
-    word2 = models.TextField()    
-    word3 = models.TextField()    
-    word4 = models.TextField()   
-    word5 = models.TextField()   
-
-    def __str__(self):
-      return self.username
-
 class A(models.Model):
     word = models.TextField()    
     def __str__(self):

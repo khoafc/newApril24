@@ -4,8 +4,6 @@ from .models import Key, UserHistory
 from .models import User
 from .models import UserData
 from .models import A
-from .models import Data
-
 
 class KeySerializer(ModelSerializer):
     class Meta:

@@ -3,14 +3,12 @@ from django.contrib import admin
 # Register your models here.
 from .models import User
 from .models import UserData, A, B, C, D, E, F, G, H, I, J, K, L, M, N, O, P, Q, R, S, T, U, V, W, X, Y, Z
-from .models import Data
 from .models import Key
 from .models import UserHistory
 admin.site.register(Key)
 admin.site.register(UserHistory)
 admin.site.register(UserData)
 admin.site.register(User)
-admin.site.register(Data)
 admin.site.register(A)
 admin.site.register(B)
 admin.site.register(C)
