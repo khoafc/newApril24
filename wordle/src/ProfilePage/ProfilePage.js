@@ -9,10 +9,17 @@ import HamburgerBlur from "../Components/HamburgerMenu/HamburgerBlur";
 import SignOut from "../GoogleAuth/SignOut";
 import Options from "../WordOption/Options";
 import FileUpload from "./FileUpload";
-
+import { useNavigate } from "react-router-dom";
+import paths from "../Utils/paths";
 import Track from "./Track";
+import ArrowBackIcon from "@mui/icons-material/ArrowBack";
 
 function ProfilePage() {
+  let navigate = useNavigate();
+
+  function goHome() {
+    navigate(paths.home);
+  }
   /* Hamburger Menu Implementation */
   let [hamburgerOpen, setHamburgerOpen] = useState(false);
   const hamburgerOpenHandler = () => {
@@ -32,6 +39,13 @@ function ProfilePage() {
       <Header click={hamburgerOpenHandler} />
       {hamburgerMenu}
       {hamburgerBlur}
+      <button className="back-button" onClick={goHome}>
+        <ArrowBackIcon style={{ width: "5vw", height: "auto" }} />
+      </button>
+      <br />
+      <br />
+      <br />
+      <br />
       <FileUpload />
       <Options />
       <SignOut />

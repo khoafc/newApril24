@@ -20,41 +20,46 @@ function Track() {
         localStorage.setItem("keyboardHistory", temp.keyboard);
         let word = temp.wordlist;
         let arrayList = word.split(",");
-        let row = 5;
+        let count = 0;
         let tempArray = [];
-        for (let i = 0; i < 5; i++) {
+        for (let i = 0; i < 6; i++) {
           if (arrayList[i] == "$") {
             tempArray.push("");
-            row = row - 1;
           } else {
             tempArray.push(arrayList[i]);
+            count = count + 1;
           }
         }
+        console.log(tempArray);
         let length = tempArray.length;
         let aa = "";
         let bb = "";
         let cc = "";
         let dd = "";
         let ee = "";
-        if (length == 0) {
-          alert("You already finished the last game");
-          alert("This is the new game");
-          Clear();
-          history("/home");
-        } else {
-          localStorage.setItem("initWordList", tempArray);
-          aa = tempArray[0];
-          bb = tempArray[1];
-          cc = tempArray[2];
-          dd = tempArray[3];
-          ee = tempArray[4];
+        try {
+          if (length == 0 || count == 6) {
+            alert("You already finished the last game");
+            alert("This is the new game");
+            localStorage.setItem("keyboardHistory", "NONE");
+            Clear();
+            history("/home");
+          } else {
+            localStorage.setItem("initWordList", tempArray);
+            aa = tempArray[0];
+            bb = tempArray[1];
+            cc = tempArray[2];
+            dd = tempArray[3];
+            ee = tempArray[4];
+          }
+          localStorage.setItem("aa", aa);
+          localStorage.setItem("bb", bb);
+          localStorage.setItem("cc", cc);
+          localStorage.setItem("dd", dd);
+          localStorage.setItem("ee", ee);
+        } catch (error) {
+          console.error(error);
         }
-        localStorage.setItem("aa", aa);
-        localStorage.setItem("bb", bb);
-        localStorage.setItem("cc", cc);
-        localStorage.setItem("dd", dd);
-        localStorage.setItem("ee", ee);
-
         let getKey = async () => {
           let formField = new FormData();
           formField.append("email", namename);
@@ -132,7 +137,7 @@ function Track() {
   };
   return (
     <div className="app-style">
-      <button onClick={trackData}>Lastest Game</button>
+      <button onClick={trackData}>Resume Game</button>
       <button onClick={Clear}>New Game</button>
     </div>
   );

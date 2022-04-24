@@ -58,13 +58,12 @@ def  createProduct(request):
                 if (len(titi) == 5) and (titi.isalpha()):
                     objj = eval(first_letter).objects.create(
                     word = titi )
-                    print("Everything will be ok nhe")
                 else:
                     print("NOT NOT NOT GOOD")
             else: 
                 None         
             print("* "*15)
-        return Response(None)
+        return Response("Okay")
     else:
         return Response("Cannot upload the file")
     return Response(None)
@@ -133,21 +132,23 @@ def  getWord(request):
 def  clear(request):
     if request.POST.get('action') == 'clear':
         email = request.POST.get('email')
-    try:
-        obj = Data.objects.get(username = email)
-        obj.word1 = ""
-        obj.word2= ""
-        obj.word3= ""
-        obj.word4= ""
-        obj.word5= ""
-        obj.save()
-        obj2 = UserHistory.objects.get(username = email)
-        obj2.keyboard = ""
-        obj2.wordlist= ""
-        obj2.save()
+        try:
+            obj = Data.objects.get(username = email)
+            obj.word1 = ""
+            obj.word2= ""
+            obj.word3= ""
+            obj.word4= ""
+            obj.word5= ""
+            obj.save()
+            obj2 = UserHistory.objects.get(username = email)
+            obj2.keyboard = ""
+            obj2.save(update_fields=["keyboard"])     
+            obj2.wordlist= ""
+            obj2.save(update_fields=["wordlist"]) 
+       
 
-    except:
-        obj = None  
+        except:
+            obj = None  
     return Response("The data was deleted")
 
 @api_view(['POST'])
@@ -157,7 +158,7 @@ def getKey(request):
         valuee = request.POST.get('valuee')
         obj = Key.objects.get(username = email)
         obj.keyword = valuee
-        obj.save()
+        obj.save(update_fields=["keyword"]) 
         return Response(None)
 @api_view(['POST'])
 def sendKey(request):

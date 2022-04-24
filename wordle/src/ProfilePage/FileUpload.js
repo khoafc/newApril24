@@ -48,8 +48,11 @@ class ProfilePage extends Component {
   handleSubmit = () => {
     const namename = localStorage.getItem("email");
     const content = localStorage.getItem("content");
+    console.log("KHOA");
+    console.log(content);
+    console.log("KHOA");
 
-    if (content != "") {
+    if (content != null) {
       let CreateNote = async () => {
         let formField = new FormData();
         formField.append("content", content);
@@ -60,10 +63,15 @@ class ProfilePage extends Component {
           url: "/api/product/create/",
           data: formField,
         }).then(() => {
-          alert("Uploaded the file sucessfully");
-        });
+         
+            alert("Uploaded the file sucessfully");
+          }
+        );
       };
       CreateNote();
+    }
+    else{
+      alert("Nothing uploaded");
     }
   };
 
@@ -76,7 +84,6 @@ class ProfilePage extends Component {
         <div>
           <button onClick={this.handleSubmit}>Submit</button>
         </div>
- 
       </div>
     );
   }

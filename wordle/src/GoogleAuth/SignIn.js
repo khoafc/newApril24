@@ -15,8 +15,8 @@ function SignIn() {
         const email = result.user.email;
         localStorage.setItem("email", email);
         console.log(result);
-              history("/profile");       
-        let Admin= async () => {
+        history("/profile");
+        let Admin = async () => {
           let formField = new FormData();
           formField.append("email", email);
           formField.append("action", "add-admin");
@@ -24,8 +24,8 @@ function SignIn() {
             method: "POST",
             url: "/api/user/create/",
             data: formField,
-          }).then(() => {
-          })}
+          }).then(() => {});
+        };
         Admin();
       })
       .catch((error) => {
@@ -33,10 +33,11 @@ function SignIn() {
       });
   };
 
+
   return (
     <div>
-      <div className='container dark'>
-        <div className='ti'>
+      <div className="container dark">
+        <div className="about-us-style">
           <button onClick={signInWithGoogle}>Sign In With Google</button>
         </div>
       </div>
