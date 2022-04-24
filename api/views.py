@@ -9,7 +9,6 @@ from rest_framework.decorators import api_view
 from .models import A, B, C, D, E, F, G, H, I, J, K, L, M, N, O, P, Q, R, S, T, U, V, W, X, Y, Z, UserHistory
 from .models import UserData
 from .models import User
-from .models import Data
 from .models import Key
 from .serializers import UserNoteSerializer
 from .serializers import LetterSerializer

@@ -24,10 +24,7 @@ class LetterSerializer(ModelSerializer):
     class Meta:
         model  = A
         fields = '__all__'
-class DataSerializer(ModelSerializer):
-    class Meta:
-        model  = Data
-        fields = '__all__'
+
 class HistorySerializer(ModelSerializer):
     class Meta:
         model  = UserHistory
