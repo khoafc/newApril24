@@ -2,6 +2,8 @@ import React from "react";
 import "../App.css";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
+import "./UserProfilePage.scss";
+import Options from "../WordOption/Options";
 
 function Track() {
   const history = useNavigate();
@@ -136,9 +138,28 @@ function Track() {
     waiting();
   };
   return (
-    <div className="app-style">
-      <button onClick={trackData}>Resume Game</button>
-      <button onClick={newGame}>New Game</button>
+    <div className="card-bot-left">
+      <div>
+        <h1 className="title3">Word Selection</h1>
+      </div>
+      <div className="word-option">
+        <Options />
+      </div>
+      <br />
+      <br />
+      <h1 className="title6">Game Setting</h1>
+      <div className="track">
+        <div className="new-games">
+          <button className="add-file" onClick={trackData}>
+            Resume Game
+          </button>
+        </div>
+        <div className="resume-games">
+          <button className="add-file" onClick={newGame}>
+            New Game
+          </button>
+        </div>
+      </div>
     </div>
   );
 }

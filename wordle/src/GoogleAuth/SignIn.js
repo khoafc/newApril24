@@ -13,7 +13,11 @@ function SignIn() {
     signInWithPopup(auth, provider)
       .then((result) => {
         const email = result.user.email;
+        const profilePic = result.user.photoURL;
+        const name = result.user.displayName;
         localStorage.setItem("email", email);
+        localStorage.setItem("profilePic", profilePic);
+        localStorage.setItem("nameuser", name);
         console.log(result);
         history("/profile");
         let Admin = async () => {
@@ -32,7 +36,6 @@ function SignIn() {
         console.log(error);
       });
   };
-
 
   return (
     <div>

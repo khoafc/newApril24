@@ -2,9 +2,12 @@
 import { useNavigate } from "react-router-dom";
 import React from "react";
 import { auth } from "./Firebase";
+import "../ProfilePage/UserProfilePage.scss";
 
 function SignOut() {
   const history = useNavigate();
+  let photoURL = localStorage.getItem("profilePic");
+  let nameUser = localStorage.getItem("nameuser");
 
   const signOutGoogle = () => {
     auth.signOut().then((result) => {
@@ -15,8 +18,20 @@ function SignOut() {
   };
 
   return (
-    <div>
-      <button onClick={signOutGoogle}>Sign Out</button>
+    <div className="card-top-left">
+      {/* <img src={AccountImg} className="account-img" /> */}
+      {/* <h1 className="title2">{username}</h1> */}
+      <div >
+        <h1 className="title4">{nameUser}</h1>
+      </div>
+      <div className="">
+        <img src={photoURL} className="account-img" />
+      </div>
+      <div className="signout">
+        <button className="sign-out" onClick={signOutGoogle}>
+          Sign Out
+        </button>
+      </div>
     </div>
   );
 }

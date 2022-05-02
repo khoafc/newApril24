@@ -7,7 +7,6 @@ import HamburgerBlur from "../Components/HamburgerMenu/HamburgerBlur";
 import WinPopUp from "./WinPopUp";
 import "./HomePage.scss";
 import { useNavigate } from "react-router-dom";
-import SignOut from "../GoogleAuth/SignOut";
 import axios from "axios";
 import gameUtils from "../Utils/gameUtils";
 
@@ -263,7 +262,6 @@ function HomePage() {
     <div>
       <Header click={hamburgerOpenHandler} />
       <button onClick={ProfilePage}>Profile Page</button>
-      <SignOut />
       {hamburgerMenu}
       {hamburgerBlur}
       <div className="grid">

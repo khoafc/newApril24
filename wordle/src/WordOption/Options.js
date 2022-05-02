@@ -28,9 +28,6 @@ function Options() {
   };
   return (
     <div>
-      <p1>
-        Please choose the library word <br />
-      </p1>
       <select
         className="custom-select"
         value={word}

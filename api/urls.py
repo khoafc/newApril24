@@ -12,5 +12,14 @@ urlpatterns = [
     path('user/gethistory/', views.getHistory, name = 'gethistory' ), 
     path('user/sendhistory/', views.sendHistory, name = 'sendhistory' ), 
     path('user/cleardata/', views.clearData, name = 'cleardata' ),
+    path('user/getwin/', views.getWin, name = 'getwin' ),
+    path('user/getloose/', views.getLoose, name = 'getloose' ),
+    path('user/updatewin/', views.updateWin, name = 'updatewin' ),
+    path('user/updateloose/', views.updateLoose, name = 'updateloose' ),
+    path('user/count/', views.getCount, name = 'count' ),
+
+
+
+
 
 ]

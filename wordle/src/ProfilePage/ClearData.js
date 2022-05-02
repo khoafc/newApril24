@@ -1,5 +1,6 @@
 import React from "react";
 import axios from "axios";
+import "./UserProfilePage.scss";
 
 function ClearData() {
   let clear = () => {
@@ -21,8 +22,8 @@ function ClearData() {
   };
 
   return (
-    <div className="app-style">
-      <button onClick={clear}>Clear Data</button>
+    <div >
+      <button className="add-file"onClick={clear}>Clear Data</button>
     </div>
   );
 }

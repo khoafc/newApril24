@@ -6,7 +6,6 @@ import { useNavigate } from "react-router-dom";
 import paths from "../Utils/paths";
 import HamburgerMenu from "../Components/HamburgerMenu/HamburgerMenu";
 import HamburgerBlur from "../Components/HamburgerMenu/HamburgerBlur";
-
 // class Tutorial extends Component
 function TutorialPage() {
   let navigate = useNavigate();

@@ -3,7 +3,10 @@ from django.db import models
 
 # Create your models here.
 class User(models.Model):
-    username = models.TextField(primary_key=True)    
+    username = models.TextField(primary_key=True)   
+    win = models.IntegerField(blank=True, null=True)
+    loose = models.IntegerField(blank=True, null=True)
+
     def __str__(self):
       return self.username
 

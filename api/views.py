@@ -78,7 +78,9 @@ def  createUser(request):
         temp_user = [d['username'] for d in list_user]
         if email not in temp_user:
             obj =User.objects.create(
-            username = email
+            username = email,
+            win = 0,
+            loose = 0,
         )
           
             obj3 = Key.objects.create(
@@ -189,3 +191,54 @@ def clearData(request):
         obj= UserData.objects.filter(username = email)
         obj.delete()
         return Response("Delete data from user: " + email + " successfully")
+@api_view(['POST'])
+def getWin(request):
+    if request.POST.get('action') == 'win':
+        email = request.POST.get('email')
+        obj = User.objects.get(username = email)
+        value = obj.win
+        print(value)
+        print("DANGKHOATI")
+        return Response(value)
+
+@api_view(['POST'])
+def getLoose(request):
+    if request.POST.get('action') == 'loose':
+        email = request.POST.get('email')
+        obj = User.objects.get(username = email)
+        value = obj.loose
+        print(value)
+        print("TAOLAKHOATI")
+        print("KHOAAU")
+        return Response(value)
+
+@api_view(['POST'])
+def updateWin(request):
+    if request.POST.get('action') == 'updatewin':
+        email = request.POST.get('email')
+        win = request.POST.get('win')
+        obj = User.objects.get(username = email)
+        obj.win = win
+        print("TEOLEOTEO")
+        print(win)
+        obj.save(update_fields=["win"]) 
+        return Response("KHOATI")
+
+@api_view(['POST'])
+def updateLoose(request):
+    if request.POST.get('action') == 'updateloose':
+        email = request.POST.get('email')
+        loose = request.POST.get('loose')
+        obj = User.objects.get(username = email)
+        obj.loose = loose
+        obj.save(update_fields=["loose"]) 
+        value = obj.loose
+        print(value)
+        return Response("TI KHOA")
+@api_view(['POST'])
+def getCount(request):
+    if request.POST.get('action') == 'count-time':
+        email = request.POST.get('email')
+        obj = User.objects.get(username = email)
+        cc =  UserNoteSerializer(obj)
+        return Response(cc.data)
