@@ -14,6 +14,7 @@ function SignIn() {
       .then((result) => {
         const email = result.user.email;
         const profilePic = result.user.photoURL;
+        console.log(profilePic)
         const name = result.user.displayName;
         localStorage.setItem("email", email);
         localStorage.setItem("profilePic", profilePic);

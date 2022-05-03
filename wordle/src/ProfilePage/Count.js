@@ -24,7 +24,7 @@ function Count() {
       data: formField,
     }).then((response) => {
       localStorage.setItem("win", response.data);
-      console.log(response.data);
+      
     });
   };
   let Loose = async () => {
@@ -40,7 +40,7 @@ function Count() {
     }).then((response) => {
       console.log("KHOAPHAMDANG2");
       localStorage.setItem("loose", response.data);
-      console.log(response.data);
+      
     });
   };
   let Count = async () => {

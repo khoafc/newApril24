@@ -8,6 +8,7 @@ function SignOut() {
   const history = useNavigate();
   let photoURL = localStorage.getItem("profilePic");
   let nameUser = localStorage.getItem("nameuser");
+  console.log(photoURL)
 
   const signOutGoogle = () => {
     auth.signOut().then((result) => {
