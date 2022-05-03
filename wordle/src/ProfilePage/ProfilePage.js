@@ -54,24 +54,9 @@ function ProfilePage() {
       <div className="left-side">
       <Count/>
       <FileUpload />
-      
       </div>
-     
       <Track />
-      {/* <ClearData/> */}
-      {/* <Options /> */}
-      {/* <br/>
-      <br />
-      <br />
-      <br />
-      <br /> */}
-      
-     
-     
-      
       </div>
-      
-   
     </div>
   );
 }

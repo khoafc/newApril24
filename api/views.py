@@ -51,8 +51,6 @@ def  createProduct(request):
             first_letter = titi[0].upper()
             temp_letter = list(eval(first_letter).objects.values('word'))
             exx = [d['word'] for d in temp_letter]
-            print(exx)
-            print("* "*30)
             if titi not in exx:
                 if (len(titi) == 5) and (titi.isalpha()):
                     objj = eval(first_letter).objects.create(
@@ -70,9 +68,7 @@ def  createProduct(request):
 @api_view(['POST'])
 def  createUser(request):
     if request.POST.get('action') == 'add-admin':
-        print("* "*30)
         email = request.POST.get('email')
-        print(email)
         serializer = UserNoteSerializer()
         list_user = list(User.objects.values('username'))
         temp_user = [d['username'] for d in list_user]
@@ -197,8 +193,7 @@ def getWin(request):
         email = request.POST.get('email')
         obj = User.objects.get(username = email)
         value = obj.win
-        print(value)
-        print("DANGKHOATI")
+        
         return Response(value)
 
 @api_view(['POST'])
@@ -207,9 +202,6 @@ def getLoose(request):
         email = request.POST.get('email')
         obj = User.objects.get(username = email)
         value = obj.loose
-        print(value)
-        print("TAOLAKHOATI")
-        print("KHOAAU")
         return Response(value)
 
 @api_view(['POST'])
@@ -219,8 +211,6 @@ def updateWin(request):
         win = request.POST.get('win')
         obj = User.objects.get(username = email)
         obj.win = win
-        print("TEOLEOTEO")
-        print(win)
         obj.save(update_fields=["win"]) 
         return Response("KHOATI")
 

@@ -14,7 +14,6 @@ function Count() {
   const [winpercent, setWinpercent] = useState(0);
   let Win = async () => {
     const email = localStorage.getItem("email");
-    console.log(email);
     let formField = new FormData();
     formField.append("email", email);
     formField.append("action", "win");
@@ -24,12 +23,10 @@ function Count() {
       data: formField,
     }).then((response) => {
       localStorage.setItem("win", response.data);
-      
     });
   };
   let Loose = async () => {
     const email = localStorage.getItem("email");
-    console.log(email);
     let formField = new FormData();
     formField.append("email", email);
     formField.append("action", "loose");
@@ -38,14 +35,11 @@ function Count() {
       url: "/api/user/getloose/",
       data: formField,
     }).then((response) => {
-      console.log("KHOAPHAMDANG2");
       localStorage.setItem("loose", response.data);
-      
     });
   };
   let Count = async () => {
     const email = localStorage.getItem("email");
-    console.log(email);
     let formField = new FormData();
     formField.append("email", email);
     formField.append("action", "count-time");
@@ -58,7 +52,7 @@ function Count() {
       setWon(temp.win);
       setLost(temp.loose);
       setPlayed(parseInt(won) + parseInt(lost));
-      setWinpercent((parseInt(won)*100/(parseInt(won) + parseInt(lost))).toFixed(2))
+      setWinpercent((parseInt(won)*100/(parseInt(won) + parseInt(lost))).toFixed(0))
     });
   };
   return (

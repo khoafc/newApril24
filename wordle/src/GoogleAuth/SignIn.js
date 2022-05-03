@@ -5,6 +5,8 @@ import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import { auth } from "./Firebase";
 import { GoogleAuthProvider, signInWithPopup } from "firebase/auth";
+import "../ProfilePage/UserProfilePage.scss";
+
 
 function SignIn() {
   const history = useNavigate();
@@ -14,11 +16,11 @@ function SignIn() {
       .then((result) => {
         const email = result.user.email;
         const profilePic = result.user.photoURL;
-        console.log(profilePic)
         const name = result.user.displayName;
         localStorage.setItem("email", email);
         localStorage.setItem("profilePic", profilePic);
         localStorage.setItem("nameuser", name);
+        console.log(name)
         console.log(result);
         history("/profile");
         let Admin = async () => {
@@ -40,9 +42,9 @@ function SignIn() {
 
   return (
     <div>
-      <div className="container dark">
-        <div className="about-us-style">
-          <button onClick={signInWithGoogle}>Sign In With Google</button>
+      <div className="signin-frame">
+        <div className="signin">
+          <button className="signin-button" onClick={signInWithGoogle}>Sign In With Google</button>
         </div>
       </div>
     </div>

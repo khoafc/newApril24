@@ -85,7 +85,7 @@ function Track() {
     };
     Tracking();
   };
-  const newGame = () => {
+   const newGame = () => {
     const namename = localStorage.getItem("email");
     let clearData = async () => {
       let formField = new FormData();
@@ -119,7 +119,6 @@ function Track() {
       });
     };
     KeyWordd();
-
     let aa = "";
     let bb = "";
     let cc = "";

@@ -4,7 +4,7 @@
 
 .small-font {
   font-weight: normal;
-  font-size: 20px;
+  font-size: 15.15px;
 }
 
 .buttons {
@@ -71,7 +71,8 @@
   margin-bottom: 40px;
 }
 .title9{
-  font-size: 2.5vh;
+  font-size: 2.6vh;
+  font-weight: bolder;
 }
 .account-img {
   height: 20vh;
@@ -92,6 +93,27 @@
   margin-top: -5vh;
   margin-left: 17vw;
   border-radius: 20px;
+}
+.signin-button{
+  @extend .buttons;
+  border-radius: 20px;
+  
+}
+.signin{
+  text-align: center;
+  margin-top: 15vh;
+}
+.signin-frame {
+  float:none;
+  margin-top: 2vh;
+  margin-right: 44vw;
+  margin-left: 44vw;
+  border: 2px solid black;
+  background-color: white;
+  border-radius: 30px;
+  width: 20vw;
+  height: 40vh;
+  overflow: auto;
 }
 .history {
   float: left;
@@ -114,7 +136,7 @@
   background-color: white;
   border-radius: 20px;
   width: 33vw;
-  height: 31.5vh;
+  height: 36.2vh;
   overflow: auto;
 }
 .card-top-left {
@@ -126,7 +148,7 @@
   background-color: white;
   border-radius: 20px;
   width: 33vw;
-  height: 25vh;
+  height: 27vh;
   overflow: auto;
 }
 .card-top-right {
@@ -137,7 +159,7 @@
   background-color: white;
   border-radius: 20px;
   width: 45vw;
-  height: 25vh;
+  height: 27vh;
   overflow: auto;
 }
 
@@ -149,7 +171,7 @@
   background-color: white;
   border-radius: 20px;
   width: 45vw;
-  height: 31vh;
+  height: 35.5vh;
   overflow: auto;
 }
 .left-side {
@@ -160,7 +182,7 @@
   background-color: white;
   border-radius: 20px;
   width: 50vw;
-  height: 64vh;
+  height: 70vh;
   overflow: auto;
 }
 .top-ten {
@@ -172,7 +194,7 @@
   background-color: white;
   border-radius: 30px;
   width: auto;
-  height: 80vh;
+  height: 86vh;
   overflow: auto;
 }
 .switch {
@@ -222,12 +244,12 @@
 .new-games {
   float: left;
   margin-left: -2vw;
-  margin-top: 2.3vh;
+  margin-top: 0vh;
 }
 .resume-games {
   float: right;
   margin-right: 0.5vw;
-  margin-top: 2.3vh;
+  margin-top: 0vh;
 }
 .text {
   @extend .small-font;

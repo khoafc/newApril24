@@ -4,6 +4,7 @@ const paths = {
   about: `/about`,
   race: `/race`,
   tutorial: `/tutorial`,
+  profile: `/profile`, 
 };
 
 export default paths;

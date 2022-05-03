@@ -8,7 +8,6 @@ function SignOut() {
   const history = useNavigate();
   let photoURL = localStorage.getItem("profilePic");
   let nameUser = localStorage.getItem("nameuser");
-  console.log(photoURL)
 
   const signOutGoogle = () => {
     auth.signOut().then((result) => {
@@ -20,8 +19,6 @@ function SignOut() {
 
   return (
     <div className="card-top-left">
-      {/* <img src={AccountImg} className="account-img" /> */}
-      {/* <h1 className="title2">{username}</h1> */}
       <div >
         <h1 className="title4">{nameUser}</h1>
       </div>

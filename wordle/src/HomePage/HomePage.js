@@ -6,13 +6,13 @@ import HamburgerMenu from "../Components/HamburgerMenu/HamburgerMenu";
 import HamburgerBlur from "../Components/HamburgerMenu/HamburgerBlur";
 import WinPopUp from "./WinPopUp";
 import "./HomePage.scss";
-import { useNavigate } from "react-router-dom";
+// import { useNavigate } from "react-router-dom";
 import axios from "axios";
 import gameUtils from "../Utils/gameUtils";
 
 function HomePage() {
   let word = localStorage.getItem("keywordss");
-  const history = useNavigate();
+  // const history = useNavigate();
   const [input, setInput] = useState("");
   let aaaaa = [""];
   const [showWinPopUp, setShowWinPopUp] = useState(false);
@@ -167,9 +167,9 @@ function HomePage() {
   const [wordList, setWordList] = useState([a, b, c, d, e, ""]);
   const namename = localStorage.getItem("email");
 
-  let ProfilePage = () => {
-    history("/profile");
-  };
+  // let ProfilePage = () => {
+  //   history("/profile");
+  // };
   function updateInput(replace) {
     setInput(replace);
   }
@@ -261,7 +261,7 @@ function HomePage() {
   return (
     <div>
       <Header click={hamburgerOpenHandler} />
-      <button onClick={ProfilePage}>Profile Page</button>
+      {/* <button onClick={ProfilePage}>Profile Page</button> */}
       {hamburgerMenu}
       {hamburgerBlur}
       <div className="grid">
